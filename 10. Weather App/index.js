@@ -2,7 +2,7 @@
 // const API_KEY = `3265874a2c77ae4a04bb96236a642d2f`
 // const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
 
-const API_KEY = '3265874a2c77ae4a04bb96236a642d2f';
+const API_KEY = '--';//input your api key on OPENWEATHER website.
 
 const form = document.querySelector("form");
 const search = document.querySelector("#search");
