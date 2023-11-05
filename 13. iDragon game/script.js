@@ -9,7 +9,7 @@ setTimeout(()=>{
 },1000);
 
 document.onkeydown = function(e){
-    console.log("1. key code is :- "+e.keyCode);
+    cond_dx = parseInt(window.getComputedStyle(dino, null).getPropertyValue('left'));
 
     if(e.keyCode==38){
         dino = document.querySelector(".dino");
@@ -19,12 +19,12 @@ document.onkeydown = function(e){
             dino.classList.remove("animateDino");
         },1500)
     }
-    if(e.keyCode==39){
+    if(e.keyCode==39  && cond_dx<=(1400)){
         dino = document.querySelector(".dino");
         dx = parseInt(window.getComputedStyle(dino, null).getPropertyValue('left'));
         dino.style.left = (dx+60)+"px";
     }
-    if(e.keyCode==37){
+    if(e.keyCode==37 && cond_dx>=(-104)){
         dino = document.querySelector(".dino");
         dx = parseInt(window.getComputedStyle(dino, null).getPropertyValue('left'));
         dino.style.left = (dx-60)+"px";
@@ -45,7 +45,6 @@ const myInterval = setInterval(()=>{
 
     offsetX = Math.abs(dx-ox);
     offsetY = Math.abs(dy-oy);
-    console.log("hi");
 
     if(offsetX<150 && offsetY<52){
         clearInterval(myInterval);
@@ -69,7 +68,7 @@ const myInterval = setInterval(()=>{
             aniDur = parseFloat(window.getComputedStyle(obstacle, null).getPropertyValue('animation-duration'));
             newDur = aniDur - 0.1;
             obstacle.style.animationDuration = newDur + 's';
-        },500);
+        },1000);   
     }
 
 },0);
